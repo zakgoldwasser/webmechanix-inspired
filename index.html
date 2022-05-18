@@ -42,12 +42,12 @@
             var path = $('#path');
             var menu=$('#menu')
             var y2= $(document).height()
-            var x1 = heroContent.offset().left-(.1*$(document).width())
+            var x1 = heroContent.offset().left-(.05*$(document).width())
             path.attr('d', 'M' + x1 + ' ' + 0 + ' L' + x1 + ' ' + y2)
 
             if ($( window ).width()>750){
                 menu.css({top: '10vh', left: x1-menu.width()});
-            }else{menu.css({top: '5vh', left: x1-menu.width()});}
+            }else{menu.css({top: '90vh', left: '80vw'});}
             
             
             var paths = $("#svg2").find(".cls-1")
@@ -137,7 +137,7 @@
                         activated = false}}
                 })   
 
-
+                if ($( window ).width()>660){
             $(".infobox").hover(
                 function() {
                     $( this ).find('.link-box-bg').css("right","0");
@@ -145,7 +145,7 @@
                   function() {
                     $( this ).find('.link-box-bg').css("right","100%");
                   }
-            )
+            )}
         });
     </script>
 </head>
