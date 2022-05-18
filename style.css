@@ -6,21 +6,22 @@ body{
     font-family: 'Montserrat', sans-serif;
     background:#592e7d;
     padding:0;
-    padding-bottom:5em;
     margin:0;
+    width:100vw;
+    overflow-x: hidden
 }
 h2{
     margin:.5em 0 0 0;
-    font-size:2em;
+    font-size:4vw;
     font-weight:600;
-    line-height: 1em;
+    line-height: .9em;
 }
 small {
-    font-size: 1em;
-    line-height: 1.2em;
+    font-size: 1.75vw;
     padding:0em;
 }
 p{
+    font-size:1.25vw;
     margin:0;
 }
 #svg{
@@ -46,25 +47,18 @@ p{
     vertical-align:center;
     cursor:pointer;
 }
+@media (max-width:750px){
+    .menu{
+        box-shadow:5px 5px 6px rgba(0,0,0,.4)
+    }
+}
 .menu > img{
     max-width:25px;
     vertical-align: middle;
 }
-@media (max-width:750px){
-    #svg{
-        display:none;
-    }
-    .menu{
-        padding:1.25em;
-    }
-    .menu > img{
-        max-width:35px;
-        max-height:35px;
-        vertical-align: middle;
-    }
-}
+
 .hero-container{
-    width:100%;
+    width:100vw;
     height:80vh;
     background-image: url("hero.jpg");
     background-size:cover;
@@ -74,29 +68,42 @@ p{
 }
 .logo{
     display:flex;
-    wide:100%;
-    justify-content:center;
-    padding:1em;
-}
-.logo > *{
-    margin-right:auto;
+    width:fit-content;
     margin-left:auto;
+    margin-right:auto;
+    padding-top:1em;
+}
+.logo img{
+    margin-left:auto;
+    margin-right:auto;
+    width:95%
 }
 .hero{
     display:flex;
     margin-left:auto;
     margin-right:auto;
     width:85%;
-    padding:6em;
+    padding:1em;
     color:white;
     align-items:center
 }
 .hero h1{
     line-height:1em;
-    font-size:4em;
+    font-size:6vw;
     margin-top:0em;
     margin-bottom:0em;
 }
+@media (max-width:768px){
+    .hero h1{
+        font-size:7vw;
+    }
+}
+@media (max-width:425px){
+    .hero h1{
+        font-size:9vw;
+    }
+}
+
 .hero-gradient{
     position:absolute;
     background-image: linear-gradient(rgba(89,46,125,0), #592e7d);
@@ -153,6 +160,10 @@ p{
     width:50%;
     padding:4em;
 }
+@media (max-width:992px){
+    .icon-box > .left{
+    padding:2em;}
+}
 .animate-svg{
     stroke-dasharray:1;
     stroke-dashoffset:1;
@@ -167,36 +178,52 @@ p{
     width:50%;
     color:white;
 }
-@media (max-width:1020px){
+
+.accordian{
+    margin-top:2em;
+}
+
+@media (max-width:660px){
     .icon-box{
         flex-direction:column;
     }
     .icon-box > .left{
         width:50%;
+        padding:1em;
         margin-right:auto;
         margin-left:auto;
     }
     .icon-box > .right{
-        width:75%;
+        width:90%;
         padding:0;
         margin-left:auto;
         margin-right:auto;
     }
+    .icon-box > .right h2{
+        text-align:center;
+        font-size:3vw;
+    }
     .content-box.active .accordian-content{
     background:rgba(255,255,255,.15);}
-}
-.accordian{
-    margin-top:2em;
+    
+    .accordian-content p{
+        font-size:2vw;
+    }
+    .accordian{
+        margin-top:1em;
+    }
 }
 .accordian-content{
     position:relative;
     height:0;
     transition:.5s;
     overflow: hidden;
+    padding-left:2em;
 }
 .content-box.active .accordian-content{
-    height:150px;
-    padding:2em;
+    height:15vh;
+    padding-top:.5em;
+    padding-left:.5em;
 }
 .content-box.active .label{
     border:4px solid;
@@ -206,16 +233,18 @@ p{
 .label{
     cursor:pointer;
     border-bottom: 3px solid #461c75;
-    padding-top:1em;
-    padding-bottom:1em;
+    padding-top:.5em;
+    padding-bottom:.5em;
     padding-left:.5em;
     transition:.5s;
+    font-size:12px;
     font-weight:600;
-    width:65%;
+    width:100%;
 }
 @media (max-width:1020px){
     .label{
-       width:100%;
+       padding-top:1em;
+        padding-bottom:1em;
     }}
 .first{
     border-top: 3px solid #461c75;
@@ -227,13 +256,17 @@ p{
 
 
 .button-container{
-    margin-top:2em;
+    margin-top:-1em;
     width:100%;
     justify-content:center;
     overflow:visible;
     text-align:center;
     position: relative;
 }
+@media (max-width:1020px){
+    .button-container{
+        margin-top:-5em;
+    }}
 button{
     display:inline-block;
     margin-left:auto;
@@ -253,35 +286,24 @@ button:hover{
     content: "";
     display: block;
     width: 3px;
-    height: 75px;
+    height: 10vh;
     background: #fff;
     margin: 0.5rem auto 0;
+    border-radius:2px;
 }
-
-
 
 .info-wrapper{
     width:100%;
     height:100%;
     position:relative;
+    margin-bottom:10em;
 }
 .infobox-container{
-    width:75%;
+    max-width:75%;
     height:75vh;
-    margin-top:2em;
     margin-left:auto;
     margin-right:auto;
     position:relative;
-}
-@media (max-width:1700px){
-    .infobox-container{
-        margin-top:-2em;
-    }
-}
-@media (max-width:1020px){
-    .infobox-container{
-        margin-top:2em
-    }
 }
 .infobox{
     position:absolute;
@@ -290,80 +312,111 @@ button:hover{
     background-repeat: no-repeat;
     background-position:center;
     cursor:pointer;
+    aspect-ratio:2/1.08;
     top:0;
     bottom:0;
     left:0;
     right:0;
-    padding:5em 10em;
+    padding:0em 3em
 }
-@media (max-width:1500px){
-    .infobox{
-        padding:0em 7em;
-    }
+.infobox > .content{
+    top:50%;
+    transform:translate(0,-50%);
 }
 
-.infobox>.content{
-    top: 50%;
-    transform: translateY(-50%);
-}
-@media (max-width:1020px){
+@media (max-width:660px){
     .infobox{
+        left:50%;
+        transform:translateX(-50%);
+        margin-top:1em;
+        padding:0em 1.5em;
         background-image: url("bg2.png");
+        background-position:top;
+        aspect-ratio:676/1096;
+        height:95vh;
     }
-    .infobox>.content{
-        top: 0%;
-        transform: translateY(0%);
-        width:50%;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top:3em;
+    #path{
+        display:none;
     }
-}
-@media (max-width:900px){
-    .infobox>.content{
-        margin-top:4em;
-        width:75%;
-    }
-}
-@media (max-width:750px){
-    .infobox>.content{
-        margin-top:6em;
-        margin-left:1em;
-        margin-right:1em;
-    }
-}
-@media (max-width:560px){
-    .infobox>.content{
+    .infobox > .content{
+        top:25%;
+        transform:translate(10%,-50%);
         width:95%;
-        margin-top:8em;
-        margin-left:.5em;
-        margin-right:.5em;
+    }
+    .infobox > .content h2{
+        font-size:4vw;
+        line-height:3vw
     }
 }
 .content{
+    margin-right:auto;
     position:relative;
     display:flex;
     flex-direction:column;
     color:white;
-    width:33%;
+    width:50%;
 }
 .wide{
-    width:50%;
+    width:75%;
 }
 .stat-container{
     margin-top:1em;
     margin-bottom:1em;
 }
+@media (max-width:768px){
+    .wide{
+       width:100%;
+    }
+    .stat-container{
+        margin-top:.5em;
+        margin-bottom:.5em;
+    }
+}
+
 .gradient-text{
     margin-bottom:-.15em;
     font-weight:600;
     position:relative;
     width:fit-content;
     background:linear-gradient(90deg,#f60136,#b80086);
-    font-size:6em;
+    font-size:10vw;
     line-height:.70em;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
+}
+@media (max-width:660px){
+    .infobox > .content{
+        top:30%;
+    }
+    .infobox > .content h2{
+        margin-top:0;
+        font-size:6vw;
+        line-height:5vw;}
+    .infobox > .content > small{
+        font-size:2vw;
+    }
+    .stat-container > p{
+        font-size:2.5vw;
+    }
+    .gradient-text{
+        font-size:12vw;
+    }}
+@media (max-width:500px){
+    .infobox > .content{
+        top:30%;
+    }
+    .infobox > .content h2{
+        font-size:max(2rem,8vw);
+        line-height:max(1.75rem,7vw);}
+    .infobox > .content > small{
+        font-size:max(.7rem,2.5vw);
+    }
+    .stat-container > p{
+        font-size:max(.8rem,3vw);
+    }
+    .gradient-text{
+        font-size:max(4.5rem,15vw);
+    }
 }
 #number{
     line-height:0em;
@@ -374,15 +427,15 @@ button:hover{
 .link-box{
     position:relative;
     width:fit-content;
-    padding:1em 2em 1em 2em;
     border-radius:5px;
+    padding:.5rem;
 }
 .link-box a{
     position:relative;
    text-decoration:none;
    color:white; 
    z-index:3;
-   font-size:1em;
+   font-size:max(.75rem,1.5vw);
    
 }
 .link-box-bg{
